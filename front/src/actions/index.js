@@ -4,7 +4,7 @@ export const fetchRandom = (state) => (dispatch) => {
 
     dispatch({ type: "view-loading" });
 
-    return fetch(`http://localhost:8080/r`, {
+    return fetch(`https://enigmatic-fortress-62602.herokuapp.com//r`, {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         headers: {
             'Content-Type': 'application/json'
@@ -25,7 +25,7 @@ export const fetchRandomWithNum = (state) => (dispatch) => {
 
     console.log("hola",state);
 
-    return fetch(`http://localhost:8080/r/withNum`, {
+    return fetch(`https://enigmatic-fortress-62602.herokuapp.com/r/withNum`, {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         headers: {
             'Content-Type': 'application/json'
@@ -44,7 +44,7 @@ export const GetAll = () => (dispatch) => {
 
     dispatch({ type: "view-loading" });
 
-    return fetch(`http://localhost:8080/r`, {
+    return fetch(`https://enigmatic-fortress-62602.herokuapp.com/r`, {
         method: 'GET', // *GET, POST, PUT, DELETE, etc.
         headers: {
             'Content-Type': 'application/json'
