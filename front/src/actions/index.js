@@ -4,17 +4,18 @@ export const fetchRandom = (state) => (dispatch) => {
 
     dispatch({ type: "view-loading" });
 
-    return fetch(`https://enigmatic-fortress-62602.herokuapp.com//r`, {
+    return fetch(`https://enigmatic-fortress-62602.herokuapp.com/r`, {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({list: state}) // body data type must match "Content-Type" header
+        body: JSON.stringify(state) // body data type must match "Content-Type" header
     }).then(response => response.json())
       .then(json => {
           console.log(json);
           dispatch({ type: "random-result", data: json });
           dispatch({ type: "view-loaded" });
+        dispatch(GetAll());
         })
 }
 
